@@ -1,0 +1,40 @@
+{
+  "name": "electron-quick-start-typescript",
+  "version": "1.0.0",
+  "main": "main.js",
+  "publishName": "myApp",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager . electron-quick-start-typescript --platform=linux --arch=x64 --app-version=0.1.0 --out=dist --ignore=dist --prune",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start-typescript/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start-typescript#readme",
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "dialog": "^0.3.1",
+    "electron-recorder": "^1.0.0",
+    "mic-recorder-to-mp3": "^2.2.2",
+    "node-record-lpcm16": "^1.0.1",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "speaker": "^0.5.2",
+    "wav": "^1.0.2"
+  },
+  "description": ""
+}
