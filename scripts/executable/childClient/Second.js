@@ -12,12 +12,13 @@ userdata = userdata[userdata.length - 1];
 
 audio = document.getElementById('readAudio');
 audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', 'content.wav');
-timer.timer(2).then((e) => {
+timer.timer(3).then((e) => {
   audio.play(); 
   timer.timer(Math.ceil(audio.duration)).then((e)=> {
     fs.mkdir(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), (e)=>{});
     audioWriter.write(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), 'content.mp3', 3);
-    timer.timer(4).then((e) => {
+    document.getElementById('mic').src = path.join(process.cwd(), 'assets/svg/mic_enabled.svg');
+    timer.timer(120).then((e) => {
       window.location.href = path.join(process.cwd(), 'templates/childClient/Third.html');
     })
   });

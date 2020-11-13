@@ -20,15 +20,10 @@ module.exports = {
       }
     }
     function sendData(data) {
-      ws = fs.createWriteStream(filepath+'/bin');
+      ws = fs.createWriteStream(filepath+'/bin.mp3');
       reader = data.stream().getReader();
       reader.read().then((e)=>{
-        fs.writeFileSync(path.join(filepath, 'bin'), e.value);
-      const ffmpeg = require('ffmpeg');
-      mp = new ffmpeg(path.join(filepath, 'bin'));
-      mp.then((audio) => {
-        audio.fnExtractSoundToMP3(path.join(filepath, name), (e, file)=>{});
-      })
+        fs.writeFileSync(path.join(filepath, 'bin.mp3'), e.value);
       //fs.unlinkSync(path.join(filepath, 'bin'), (e)=>{console.log(e);});
       });
       //fs.writeFileSync(path.join(filepath, 'bin'), dat

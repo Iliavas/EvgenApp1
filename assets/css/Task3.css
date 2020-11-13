@@ -1,0 +1,64 @@
+.body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.my-container {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.timer {
+  color: #F9F9FF;
+  background-color: #3B4964;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 1rem;
+  margin-right: 3px;
+}
+
+.task {
+  color: #F9F9FF;
+  background-color: #3B4964;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 1rem;
+  margin-top: 35px;
+
+}
+
+.text {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.mic {
+  height: 55px;
+  width: 55px;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+.btn-test {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: #579AFF;
+  color: #323232;
+  font-size: 30px;
+  margin-top: 40px;
+}

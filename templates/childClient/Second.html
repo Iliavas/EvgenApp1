@@ -1,4 +1,38 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/Task2.css">
+</head>
+<body class="body">
+  <audio id='readAudio'></audio>
+    <div class="my-container">
+        <div class="text-right">
+            <a href="#" class="btn timer btn-lg disabled" role="button" aria-disabled="true" id='timer'>1:30</a>
+        </div>
+        <div class="text-center">
+            <a href="#" class="btn task btn-lg disabled" role="button" aria-disabled="true">Задание 2</a>
+            <p class="text">Вам нужно ответить на 6 вопросов, услышанных в аудиофайле</p>
+        </div>
+        <div class="text-right">
+            <img src="../../assets/svg/mic_disabled.svg" class="mic" alt="mic" id='mic'>
+        </div>
+    </div>
+    <script>
+      const path = require('path');
+      require(path.join(process.cwd(), 'scripts/executable/childClient/Second.js'));
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,4 +47,4 @@
     require(path.join(process.cwd(), 'scripts/executable/childClient/Second.js'));
   </script>
 </body>
-</html>
+</html>-->

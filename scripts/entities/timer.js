@@ -1,5 +1,6 @@
 async function timer(time) {
   timer = document.getElementById('timer');
+  timer.hidden = false;
   innerTime = time;
   await new Promise((resolve, reject) =>{timerInterval = setInterval(() => {
     innerTime -=1;

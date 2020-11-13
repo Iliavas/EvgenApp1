@@ -12,7 +12,7 @@ function getLocationFromWindow(after) {
   return dialog.showOpenDialog({ 
     properties: ['openFile'],
     filters: [
-        {name: 'All Files', extensions: ['wav']}
+        {name: 'All Files', extensions: ['wav', 'mp3']}
     ],
   }).then((data) => {
     if (!data.canceled) {
