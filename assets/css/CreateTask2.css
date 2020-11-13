@@ -1,0 +1,71 @@
+.body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.header__content {
+  color: white;
+  margin-top: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  background-color: #323232;
+  margin-right: 40%;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+.my-container {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.my-btn {
+  background-color: #3B4964;
+  color: #F9F9FF;
+  margin-top: 20px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.subtitle {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.text-right {
+  margin-right: 60px;
+}
+
+.btn-next {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 10px;
+  background-color: #3B4964;
+  font-size: 20px;
+}
+
+.btn-file {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
+  background-color: #CFE0FF;
+  color: #323232;
+  font-size: 30px;
+}
+

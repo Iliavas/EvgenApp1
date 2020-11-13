@@ -6,11 +6,15 @@
   <title>Document</title>
 </head>
 <body>
-  <input id='NameInput' placeholder="ФИО"/>
-  <div id='toSelect'></div>
+  <div id='testsHolder'></div>
+  <div id='users'>
+    <button>
+      создать новый
+    </button>
+  </div>
   <script>
     const path = require('path');
-    require(path.join(process.cwd(), 'scripts/executable/childClient/TestSelection.js'));
+    require(path.join(process.cwd(), 'scripts/executable/teacherClient/ListOftests.js'));
   </script>
 </body>
 </html>

@@ -1,12 +1,29 @@
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CreateNewTest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  </head>
   <body>
-    <input placeholder='название теста' id='inputField'/>
-    <button id='nextButton'>
-      <a href='First.html'>дальше</a>
-    </button>
+    <div class="d-flex justify-content-center">
+      <div class="w-75 input-group input-group-sm mb-3" style='margin-top:100px;'>
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">название</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id = 'inputField'>
+      </div>
+    </div>
+  
+    <div class='d-flex justify-content-center'>
+      <button type="button" class="btn btn-secondary p-2" id='nextButton'>Дальше</button>
+    </div>
     <script>
       const path = require('path')
       require( path.join(process.cwd(), 'scripts/executable/teacherClient/GetNameOfTest.js'))
     </script> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   </body>
 </html>

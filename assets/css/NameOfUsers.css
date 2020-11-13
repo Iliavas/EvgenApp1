@@ -1,0 +1,25 @@
+.people__margin {
+  margin-right: 10px;
+}
+.my-image {
+  height: 60px;
+  width: 64px;
+}
+
+.heading {
+  margin-top: 70px;
+  margin-left: 100px;
+}
+
+.people__selection {
+  font-family: 'Righteous', cursive;
+  font-size: 36px;
+  font-weight: 400;
+  color: #000000;  
+}
+
+.people__text {
+  font-size: 24px;
+  margin-left: 100px;
+  margin-right: 100px;
+}

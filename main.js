@@ -10,7 +10,7 @@ function createWindow () {
      }
    })
  
-   win.loadFile('templates/childClient/First.html')
+   win.loadFile('templates/teacherClient/Third.html')
    win.webContents.openDevTools()
 }
  

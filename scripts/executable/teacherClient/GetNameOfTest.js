@@ -10,4 +10,5 @@ document.getElementById('nextButton').onclick = () => {
   }
   fs.mkdir(path.join(pathToTestFolder, inp.value), (err)=>{});
   fs.writeFile(path.join(process.cwd(), 'buffer.txt'), path.join(pathToTestFolder, inp.value), (err)=>{});
+  window.location.href=path.join(process.cwd(), 'templates/teacherClient/First.html')
 }

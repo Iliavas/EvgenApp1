@@ -1,0 +1,62 @@
+.body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.test__selection {
+  margin: 0px;
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text {
+  color: #C4DFE6;
+}
+
+.bg__color {
+  background-color: #323232;
+}
+
+.bg-my {
+  background-color: #3B4964;
+}
+
+.bg-test {
+  background-color: #7CD8FF;
+  color: #003B46;
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  display: block;
+  width: 50%;
+  margin-right: 10px;
+
+}
+
+.my-btn {
+  display: block;
+  width: 70%;
+  margin: 20px;
+}
+
+.height {
+  height: 100vh;
+}
+
+.my-margin {
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.plus {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.btn-padding {
+  padding-top: 35%;
+}
+
