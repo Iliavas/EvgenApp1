@@ -3,6 +3,11 @@ const path = require('path');
 const glob = require('glob');
 const {dialog} = require('electron').remote;
 
+
+if (!fs.existsSync('../../Users')) fs.mkdirSync(path.join(process.cwd(), 'Users'));
+if (!fs.existsSync('../../Tests')) fs.mkdirSync(path.join(process.cwd(), 'Tests'));
+console.log('fuck');
+
 tests = fs.readdirSync(path.join(process.cwd(), 'Tests'), (e)=>{});
 holder = document.getElementById('testsHolder')
 

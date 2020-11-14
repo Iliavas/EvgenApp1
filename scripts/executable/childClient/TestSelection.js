@@ -4,8 +4,6 @@ const path = require('path');
 
 const os = require('os');
 
-if (!fs.existsSync('../../Users')) fs.mkdir('../../Users');
-if (!fs.existsSync('../../Tests')) fs.mkdir('../../Tests');
 
 fs.readdir(path.join('../../Tests'), (err, files) => {
   f = files.map((e) => {
