@@ -12,6 +12,6 @@ document.getElementById('submitButton').onclick = () => {
     name = 'content.' + audioLoc.split('.')[audioLoc.split('.').length-1];
     fs.writeFile(path.join(wd, 'content.' + audioLoc.split('.')[audioLoc.split('.').length-1]), '', (err)=>{});
     fs.copyFileSync(audioLoc, path.join(wd, name));
-    window.location.href = path.join(process.cwd(), 'templates/teacherClient/Third.html');
+    window.location.href = path.join('../../templates/teacherClient/Third.html');
   });
 }

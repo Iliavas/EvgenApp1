@@ -9,7 +9,7 @@ document.getElementById('submitButton').onclick = () => {
   console.log(inp);
   pathToTest = getCurrentTestPath.getPath();
   console.log(pathToTest);
-  fs.mkdir(path.join(pathToTest, '1'), (err) => {})
-  fs.writeFile(path.join(pathToTest, '1', 'content.txt'), inp.value, (err)=>{});
-  window.location.href = path.join(process.cwd(), 'templates/teacherClient/Second.html');
+  fs.mkdirSync(path.join(pathToTest, '1'), {recursive: true}, (err) => {})
+  fs.writeFileSync(path.join(pathToTest, '1', 'content.txt'), inp.value, (err)=>{});
+  window.location.href = path.resolve('templates/teacherClient/Second.html');
 }

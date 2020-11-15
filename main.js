@@ -10,8 +10,8 @@ function createWindow () {
      }
    })
  
-   win.loadFile('templates/teacherClient/ListOftests1.html')
-   win.webContents.openDevTools()
+   win.loadFile('templates/RoleSelection.html')
+   //win.webContents.openDevTools()
 }
  
 app.whenReady().then(createWindow);

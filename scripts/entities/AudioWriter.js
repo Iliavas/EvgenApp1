@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path');
 
+
 module.exports = {
   write: function(filepath, name, time) {
     navigator.mediaDevices.getUserMedia({audio:true})

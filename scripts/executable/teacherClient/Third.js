@@ -17,11 +17,12 @@ document.getElementById('submitButton').onclick = () => {
   testPath = getTestPath.getPath();
   themes = document.querySelectorAll('.toOutData');
   stringToWirte = '';
+  console.log(themes.length);
   themes.forEach((element) => {
     stringToWirte += element.children[0].value + '\n';
     console.log(element);
   })
-  fs.mkdir(path.join(testPath, '3'), (e)=>{});
+  fs.mkdirSync(path.join(testPath, '3'), (e)=>{});
   fs.writeFileSync(path.join(testPath, '3/content.txt'), stringToWirte, (err)=>{});
-  window.location.href = path.join(process.cwd(), 'templates/teacherClient/ListOftests1.html')
+  window.location.href = path.join('../../templates/teacherClient/ListOftests1.html')
 }

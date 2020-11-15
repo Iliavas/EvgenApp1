@@ -1,18 +1,26 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
 const {dialog} = require('electron').remote;
 
 
-if (!fs.existsSync('../../Users')) fs.mkdirSync(path.join(process.cwd(), 'Users'));
-if (!fs.existsSync('../../Tests')) fs.mkdirSync(path.join(process.cwd(), 'Tests'));
-console.log('fuck');
+function findFile(folderLoc, totalFunc) {
+  files = fs.readdirSync(folderLoc);
+  res = [];
+  for (i = 0; i < files.length; ++i) {
+    loc = files[i].split('.');
+    if (loc[loc.length-1] == 'json') res.push(path.join(folderLoc, files[i]));
+  }
+  totalFunc(res);
+}
 
-tests = fs.readdirSync(path.join(process.cwd(), 'Tests'), (e)=>{});
+if (!fs.existsSync(path.resolve("Users"))) fs.mkdirSync(path.resolve('Users'));
+if (!fs.existsSync(path.resolve('Tests'))) fs.mkdirSync(path.resolve('Tests'));
+
+tests = fs.readdirSync(path.resolve('Tests'), (e)=>{});
 holder = document.getElementById('testsHolder')
 
 document.getElementById('createButton').onclick = () => {
-  window.location.href = path.join(process.cwd(), 'templates/teacherClient/GetNameOfTest.html');
+  window.location.href = path.resolve('templates/teacherClient/GetNameOfTest.html');
 }
 
 tests.forEach((e)=>{
@@ -36,7 +44,7 @@ tests.forEach((e)=>{
     myUl.className = 'list-group list-group-flush';
     BaseElem.appendChild(myUl);
     if (createNew != undefined) createNew.remove();
-    glob(path.join(process.cwd(), 'Users', '*.json'), (err, files) => {
+    findFile(path.join(process.cwd(), 'Users'), (files) => {
       files.forEach((file) => {
         data = require(file);
         data.forEach((user) => {
@@ -44,10 +52,10 @@ tests.forEach((e)=>{
             userDOM = document.createElement('li');
             userDOM.className = 'list-group-item people__text';
             userDOM.onclick = () => {
-              console.log(path.join(process.cwd(), 'Users', user.name+user.test));
+              console.log(path.resolve('Users', user.name+user.test));
               dialog.showOpenDialog(
                 {
-                  defaultPath: path.join(process.cwd(), 'Users', user.name+user.test)
+                  defaultPath: path.resolve('Users', user.name+user.test)
                 }
               );
             }

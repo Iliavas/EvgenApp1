@@ -11,7 +11,8 @@ userdata = require(path.join(process.cwd(), 'Users', os.hostname+'.json'));
 userdata = userdata[userdata.length - 1];
 
 audio = document.getElementById('readAudio');
-audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', 'content.wav');
+src = fs.readdirSync(path.join(process.cwd(), 'Tests', userdata.test, '2'), (e)=>{console.log(e);})
+audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', src[0]);
 timer.timer(3).then((e) => {
   audio.play(); 
   timer.timer(Math.ceil(audio.duration)).then((e)=> {
