@@ -4,6 +4,10 @@ const path = require('path');
 
 module.exports = {
   write: function(filepath, name, time) {
+    sound = document.createElement('audio');
+    sound.src = path.join(process.cwd(), 'assets/sounds/beep.mp3');
+    document.body.appendChild(sound);
+    sound.autoplay = true;
     navigator.mediaDevices.getUserMedia({audio:true})
     .then(stream => {handlerFunction(stream); rec.start();
       setTimeout(()=>{rec.stop();}, time*1000);})

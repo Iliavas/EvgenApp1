@@ -15,9 +15,9 @@ src = fs.readdirSync(path.join(process.cwd(), 'Tests', userdata.test, '2'), (e)=
 audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', src[0]);
 timer.timer(3).then((e) => {
   audio.play(); 
+  audioWriter.write(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), 'content.mp3', 3);
   timer.timer(Math.ceil(audio.duration)).then((e)=> {
     fs.mkdir(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), (e)=>{});
-    audioWriter.write(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), 'content.mp3', 3);
     document.getElementById('mic').src = path.join(process.cwd(), 'assets/svg/mic_enabled.svg');
     timer.timer(120).then((e) => {
       window.location.href = path.join(process.cwd(), 'templates/childClient/Third.html');
