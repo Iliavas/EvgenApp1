@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const {dialog} = require('electron').remote;
 
+const getTestPath = require("../../../scripts/entities/getCurrentTestPath.js")
+
 
 function findFile(folderLoc, totalFunc) {
   files = fs.readdirSync(folderLoc);
@@ -13,21 +15,44 @@ function findFile(folderLoc, totalFunc) {
   totalFunc(res);
 }
 
-if (!fs.existsSync(path.resolve("Users"))) fs.mkdirSync(path.resolve('Users'));
-if (!fs.existsSync(path.resolve('Tests'))) fs.mkdirSync(path.resolve('Tests'));
+function deleteFunc() {
+  console.log(this);
+  fs.rmdir(path.join(process.cwd(), "Tests", this.content), {recursive: true}, (e)=> {});
+  window.location.href = path.resolve("templates/teacherClient/ListOftests1.html");
+}
 
-tests = fs.readdirSync(path.resolve('Tests'), (e)=>{});
+function updateFunc() {
+  console.log(this);
+  getTestPath.setPath(this.content);
+  window.location.href = path.resolve("templates/teacherClient/First.html")
+}
+
+const UsersPath = path.join(process.cwd(), "Users");
+const TestPath = path.join(process.cwd(), "Tests")
+
+if (!fs.existsSync(UsersPath)) fs.mkdirSync(UsersPath);
+if (!fs.existsSync(TestPath)) fs.mkdirSync(TestPath);
+
+tests = fs.readdirSync(TestPath, (e)=>{});
 holder = document.getElementById('testsHolder')
 
 document.getElementById('createButton').onclick = () => {
-  window.location.href = path.resolve('templates/teacherClient/GetNameOfTest.html');
+  //console.log(path.resolve("templates/teacherClient/GetNameOfTest.html"))
+  window.location.href =  path.resolve("templates/teacherClient/GetNameOfTest.html");
 }
 
 tests.forEach((e)=>{
   element = document.createElement('div');
-  element.innerHTML ='<button type="button" class="btn btn-lg my-btn bg-my text mx-auto">' + e + '</button>';
-  holder.appendChild(element);
-  element.onclick = () => {
+  element.innerHTML ='<button type="button" class="btn btn-lg my-btn bg-my text mx-auto flex-test-container"><div>' + e + '</div></button>';
+  element.className = "flex-test-container"
+  let commandPalet = document.createElement("div");
+  commandPalet.className = "cmd";
+  commandPalet.innerHTML = "<img src=' "+ path.resolve("assets/svg/trash-empty.svg") +"' class='delete' name='delete'> <img src='"+
+    path.resolve("assets/svg/file-text.svg")+"' class='update' name='update'> <img src='" + path.resolve("assets/svg/flame.svg") + " ' class='show-res' name='res'>";
+  console.log(commandPalet.elements);
+  commandPalet.children[0].onclick = deleteFunc.bind({content: e});
+  commandPalet.children[1].onclick = updateFunc.bind({content: e});
+  commandPalet.children[2].onclick = () => {
     checkExisting = document.getElementById('userHolder');
     if (checkExisting != undefined) {checkExisting.remove();}
     toUserHold = document.getElementById('users');
@@ -66,4 +91,15 @@ tests.forEach((e)=>{
       })
     })
   }
+  element.firstChild.appendChild(commandPalet);
+  holder.appendChild(element);
 })
+
+let createNew = document.createElement("button")
+createNew.innerHTML = "создать новый тест"
+createNew.className = "btn btn-lg my-btn bg-my text mx-auto"
+createNew.onclick = () => {
+  window.location.href = path.resolve("templates/teacherClient/GetNameOfTest.html");
+}
+
+holder.appendChild(createNew);

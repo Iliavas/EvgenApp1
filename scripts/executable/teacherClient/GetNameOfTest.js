@@ -4,7 +4,7 @@ const path = require('path');
 inp = document.getElementById('inputField');
 
 document.getElementById('nextButton').onclick = () => {
-  pathToTestFolder = path.resolve('Tests');
+  pathToTestFolder = path.join(process.cwd(), "Tests");
   if (!fs.existsSync(pathToTestFolder)) {
     fs.mkdir(pathToTestFolder, {recursive: true}, (err)=>{console.log(err)});
   }

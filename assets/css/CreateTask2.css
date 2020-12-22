@@ -46,15 +46,24 @@
 }
 
 .text-right {
+  display: inline-block;
   margin-right: 60px;
 }
+.text-left{
+  display: inline-block;
+}
 
+/*
 .btn-next {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 25px;
   padding-right: 25px;
   margin-top: 10px;
+  background-color: #3B4964;
+  font-size: 20px;
+}*/
+.btn-next{
   background-color: #3B4964;
   font-size: 20px;
 }
@@ -68,4 +77,3 @@
   color: #323232;
   font-size: 30px;
 }
-

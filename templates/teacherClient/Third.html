@@ -16,17 +16,16 @@
     <div class="container-fluid text-center" id='main'>
         <a href="#" class="btn my-btn btn-lg disabled" role="button" aria-disabled="true">Задание 3</a>
         <p class="subtitle">Здесь ученикам нужно рассказать монолог из выбранной темы</p>
-        <div class="my-padding toOutData">
-          <div class="input-group mb-3 text-center">
-            <input type="text" class="PlaceChange form-control text-center " placeholder="Тема" aria-describedby="basic-addon1">
-          </div>
-        </div>
         <div id="endDiv"></div>
         <button type="next" class="btn btn-primary btn-new" id='createButton'>+</button>
     </div>
-    <div class="text-right">
-        <button type="next" class="btn btn-primary btn-next" id='submitButton'>next</button>
+    <div class="text-left" style="display: inline-block;">
+      <button type="next" class="btn btn-primary btn-next" id='prevButton' style="display:inline-block;">previous</button>
     </div>
+    <div class="text-right" style="display: inline-block;">
+        <button type="next" class="btn btn-primary btn-next" id='submitButton' style="display: inline-block;">next</button>
+    </div>
+    
     <script>
       const path = require('path');
       require(path.join('../../scripts/executable/teacherClient/Third.js'))

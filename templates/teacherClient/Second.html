@@ -18,9 +18,18 @@
         <p class="subtitle">В этом задании вам необходимо ответить на 6 вопросов, услышанных в аудиофайле</p>
         <button type="next" class="btn btn-primary btn-file" id='submitButton'>Загрузить аудиофайл</button>
     </div>
-    <div class="text-right">
-        <button type="next" class="btn btn-primary btn-next">next</button>
+    <span id="currentAudio"></span>
+
+    <div>
+      <div class="text-left">
+        <button type="next" class="btn btn-primary btn-next" id="prevButton">previous</button>
+      </div>
+      <div class="text-right">
+          <button type="next" class="btn btn-primary btn-next" id="nextButton">next</button>
+      </div>
     </div>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script>

@@ -1,3 +1,5 @@
+let innerTime = 0;
+
 async function timer(time) {
   timer = document.getElementById('timer');
   timer.hidden = false;
@@ -11,6 +13,11 @@ async function timer(time) {
 });
 return Promise.resolve(1);}
 
+function stop() {
+  innerTime = 1;
+}
+
 module.exports = {
-  timer: timer
+  timer: timer,
+  stop: stop
 }
