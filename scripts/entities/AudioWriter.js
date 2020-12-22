@@ -7,11 +7,11 @@ function write(filepath, name, time, functionAfter=()=>{}, isAudioProvided=false
   console.log(time, "time");
   setTimeout(()=>{
     sound = document.createElement('audio');
-    sound.src = path.join(process.cwd(), 'assets/sounds/beep.mp3');
+    sound.src = '../../assets/sounds/beep.mp3';
     document.body.appendChild(sound);
     sound.autoplay = true;
     micImg = document.getElementById('mic');
-    micImg.src = path.resolve('assets/svg/mic_enabled.svg');
+    micImg.src = '../../assets/svg/mic_enabled.svg';
     let a = timer.timer(time).then(() => {functionAfter()});
     //console.log(a);
     if (isAudioProvided) {

@@ -17,14 +17,14 @@ userdata = userdata[userdata.length - 1];
 
 audio = document.getElementById('readAudio');
 src = fs.readdirSync(path.join(process.cwd(), 'Tests', userdata.test, '2'), (e)=>{console.log(e);})
-audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', src[0]);
+audio.src = path.join(process.cwd(), 'Tests', userdata.test, '2', src[1]);
 fs.mkdirSync(path.join(process.cwd(), "Users", userdata.name+userdata.test, '2'), {recursive: true}, (e)=> {});
 timer.timer(3).then((e) => {
   //audio.play();
   let recorder = new AudioWriter.writer();
   recorder.write(path.join(process.cwd(), 'Users', userdata.name+userdata.test, '2'), 'content.mp3', Math.ceil(audio.duration),
   functionAfter = () => {
-    window.location.href = path.resolve('templates/childClient/Third.html');
+    window.location.href = '../../templates/childClient/Third.html';
   }, audioProvided=true);
   skipFunc = () => {
     recorder.stop();

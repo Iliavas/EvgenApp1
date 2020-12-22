@@ -35,7 +35,7 @@ splittingData.forEach((stringElem)=>{
       recorder = new AudioWriter.writer();
       skipFunc = () => {recorder.stop();}
       recorder.write(path.join(process.cwd(), 'Users', userData.name+userData.test, '3'), 'content.mp3', 120, functionAfter=() => {
-        window.location.href = path.resolve('templates/childClient/TestSelection.html');
+        window.location.href = '../../templates/childClient/TestSelection.html';
       });
     })
   }
@@ -46,6 +46,3 @@ splittingData.forEach((stringElem)=>{
   pos.appendChild(element);
   //el = document.getElementById('container').insertBefore(element, pos);
 })
-for (i = 0; i < splittingData.length; ++i) {
-  
-}

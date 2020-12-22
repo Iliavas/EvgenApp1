@@ -18,13 +18,13 @@ function findFile(folderLoc, totalFunc) {
 function deleteFunc() {
   console.log(this);
   fs.rmdir(path.join(process.cwd(), "Tests", this.content), {recursive: true}, (e)=> {});
-  window.location.href = path.resolve("templates/teacherClient/ListOftests1.html");
+  window.location.href = "../../templates/teacherClient/ListOftests1.html";
 }
 
 function updateFunc() {
   console.log(this);
   getTestPath.setPath(this.content);
-  window.location.href = path.resolve("templates/teacherClient/First.html")
+  window.location.href = "../../templates/teacherClient/First.html"
 }
 
 const UsersPath = path.join(process.cwd(), "Users");
@@ -38,7 +38,7 @@ holder = document.getElementById('testsHolder')
 
 document.getElementById('createButton').onclick = () => {
   //console.log(path.resolve("templates/teacherClient/GetNameOfTest.html"))
-  window.location.href =  path.resolve("templates/teacherClient/GetNameOfTest.html");
+  window.location.href =  "../../templates/teacherClient/GetNameOfTest.html";
 }
 
 tests.forEach((e)=>{
@@ -47,8 +47,8 @@ tests.forEach((e)=>{
   element.className = "flex-test-container"
   let commandPalet = document.createElement("div");
   commandPalet.className = "cmd";
-  commandPalet.innerHTML = "<img src=' "+ path.resolve("assets/svg/trash-empty.svg") +"' class='delete' name='delete'> <img src='"+
-    path.resolve("assets/svg/file-text.svg")+"' class='update' name='update'> <img src='" + path.resolve("assets/svg/flame.svg") + " ' class='show-res' name='res'>";
+  commandPalet.innerHTML = "<img src=' "+ "../../assets/svg/trash-empty.svg" +"' class='delete' name='delete'> <img src='"+
+    "../../assets/svg/file-text.svg"+"' class='update' name='update'> <img src='" + "../../assets/svg/flame.svg" + " ' class='show-res' name='res'>";
   console.log(commandPalet.elements);
   commandPalet.children[0].onclick = deleteFunc.bind({content: e});
   commandPalet.children[1].onclick = updateFunc.bind({content: e});
@@ -99,7 +99,7 @@ let createNew = document.createElement("button")
 createNew.innerHTML = "создать новый тест"
 createNew.className = "btn btn-lg my-btn bg-my text mx-auto"
 createNew.onclick = () => {
-  window.location.href = path.resolve("templates/teacherClient/GetNameOfTest.html");
+  window.location.href = "../../templates/teacherClient/GetNameOfTest.html";
 }
 
 holder.appendChild(createNew);

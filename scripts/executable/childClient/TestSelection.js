@@ -30,7 +30,7 @@ fs.readdir(path.join('Tests'), (err, files) => {
       }
       fs.writeFileSync(path.join(process.cwd(), 'Users', os.hostname+'.json'), JSON.stringify(myJSON), (e)=>{});      
       fs.mkdirSync(path.join(process.cwd(), 'Users', nameInp.value+e), (e)=>{});
-      window.location.href = path.join(path.resolve('templates/childClient/First.html'));
+      window.location.href = path.join('../../templates/childClient/First.html');
     }
     document.getElementById('container').insertBefore(elToCreate, pos);
   });

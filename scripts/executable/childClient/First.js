@@ -29,7 +29,7 @@ timer.timer(90).then((e) => {
   }
   userFolderPath = path.join(process.cwd(), 'Users', data[data.length-1].name+data[data.length-1].test, '1');
   fs.mkdir(userFolderPath, {recursive:true}, (e)=>{});
-  recorder.write(userFolderPath, "content.mp3", 15, functionAfter=()=> {
-    window.location.href = path.resolve('templates/childClient/Second.html');
+  recorder.write(userFolderPath, "content.mp3", 90, functionAfter=()=> {
+    window.location.href = '../../templates/childClient/Second.html';
   });
 });

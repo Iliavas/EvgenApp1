@@ -15,5 +15,5 @@ document.getElementById('submitButton').onclick = () => {
   console.log(pathToTest);
   fs.mkdirSync(path.join(pathToTest, '1'), {recursive: true}, (err) => {})
   fs.writeFileSync(path.join(pathToTest, '1', 'content.txt'), inp.value, (err)=>{});
-  window.location.href = path.resolve("templates/teacherClient/Second.html");
+  window.location.href = ("../../templates/teacherClient/Second.html");
 }
